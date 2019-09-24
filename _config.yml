@@ -9,38 +9,10 @@ name: Weaving the Web
 description: Schwerpunkt im Medieninformatik Master
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/th-koeln/mi-2017/master/images/box.png
+avatar: https://www.medieninformatik.th-koeln.de/img/mi-box-100.png
 
 # Where are we?
 timezone: Europe/Berlin
-
-#
-# Flags below are optional
-#
-
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email:
-  facebook:
-  flickr:
-  github:
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: micologne
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: mikoeln
-  googleplus: # anything in your profile username that comes after plus.google.com/
-
-
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus:
-
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
@@ -51,9 +23,30 @@ deployurl: https://th-koeln.github.io
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: "/mi-master-wtw"
+baseurl: "/mi-master-wtw" # the subpath of your site, e.g. /blog
+# baseurl: "/th-koeln-mi-boilerplate" # the subpath of your site, e.g. /blog
 
-teaserimage: "hero-wtw-klein.jpg"
+# Set hero background image options
+# heroimage: image file from the assets/images folder
+# heroimage_contain: should the background image have the contain css size option
+# heroimage_size: size of the hero area. Options are large, medium or null for small
+heroimage: "hero-wtw-klein.jpg"
+heroimage_contain: false
+heroimage_size: "medium"
+
+# Edit items in the navigation here
+# Use path for links in this site and url for exernal links
+navigation:
+  - path: timetable-sose-2019/
+    name: Zeitplan SoSe 2019
+  - path: web-technologien/
+    name: Web Technologien
+  - path: formate/
+    name: Formate
+  - url: https://github.com/th-koeln/mi-master-wtw/issues/new
+    name: Frage stellen
+  - url: https://github.com/th-koeln/mi-master-wtw/wiki
+    name: WTW Wiki
 
 #
 # !! You don't need to change any of the configuration flags below !!
@@ -82,7 +75,7 @@ kramdown:
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  style: :compressed # You might prefer to minify using :compressed
 
 # Zur Abtrannung der Aufgabe
 excerpt_separator: "<!--aufgabe-->"
@@ -92,7 +85,18 @@ plugins_dir:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
 
-# Exclude these files from your production _site
+# Build settings
+remote_theme: flobraeun/mi-jekyll-theme
+theme: mi-jekyll-theme
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -101,11 +105,19 @@ exclude:
   - CNAME
 
 collections:
+  webtechnologien:
+    output: false
   lehrveranstaltungen:
     output: true
   workshops:
     output: true
-  webtechnologien:
+  faq:
+    output: false
+  snippets:
+    output: false
+  links:
+    output: false
+  news:
     output: false
 
 defaults:
